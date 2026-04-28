@@ -1,11 +1,14 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+import os
 
 app=Flask(__name__)
+base_dir=os.path.dirname(os.path.abspath(__file__))
+pr_root=os.path.dirname(base_dir)
+model_path=os.path.join(pr_root,"model",'model.pkl')
 
-model=joblib.load(r"D:\my_git\Diabetes_Classification\model\model.pkl")
-scaler=joblib.load(r'D:\my_git\Diabetes_Classification\model\scaler.pkl')
+model=joblib.load(model_path)
 
 @app.route("/")
 def home():
@@ -15,7 +18,6 @@ def home():
 def predict():
     data= request.get_json()
     features=np.array([list(data.values())])
-    # features_scaled=scaler.transform(features)
     prediction = model.predict(features)[0]
     proba=model.predict_proba(features)[0][1]
     return jsonify(   { "prediction": int(prediction),
