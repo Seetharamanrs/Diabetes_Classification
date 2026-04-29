@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:5000/predict"
+url = "http://13.234.213.174:5000/predict"
 
 test_cases = {
     "Non-Diabetic": {

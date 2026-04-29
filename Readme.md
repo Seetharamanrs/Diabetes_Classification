@@ -9,6 +9,7 @@
 - Model optimization using hyperparameter tuning
 - REST API for real-time predictions
 - Scenario-based API testing
+- Cloud deployment on AWS EC2
 
 ## Dataset
 - Source: Pima Indians Diabetes Dataset
@@ -71,6 +72,7 @@ python ``` test/test_cases.py```
 - Building and comparing ML models
 - Deploying ML models using REST APIs
 - Ensuring consistency between training and prediction pipelines
+-  Deploying ML applications on AWS EC2 and exposing public APIs
 
 ## Conclusion
 
